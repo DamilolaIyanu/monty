@@ -66,3 +66,13 @@ void print_stack(stack_t **stack, unsigned int lnum)
 		tmp = tmp->next;
 	}
 }
+/**
+ *nop - does nothing
+ *@stack: pointer to the stack
+ *@lnum: line number
+ */
+void nop(stack_t **stack, unsigned int lnum)
+{
+	(void)stack;
+	(void)lnum;
+}

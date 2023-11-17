@@ -51,6 +51,8 @@ void print_stack(stack_t **stack, unsigned int lnum);
 void print_top(stack_t **stack, unsigned int lnum);
 void add_to_stack(stack_t **newnode, _attribute_((unused)), unsigned int lnum);
 void add_nodes(stack_t **stack, unsigned int lnum);
+void nop(stack_t **stack, unsigned int lnum);
+
 
 
 #endif
