@@ -37,4 +37,32 @@ void add_nodes(stack_t **stack, unsigned int lnum)
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }
-
+/**
+ *print_top - prints thetop of stack
+ *@stack: pointer to the stack
+ *@lnum: the line number
+ */
+void print_top(stack_t **stack, unsigned int lnum)
+{
+	if (*stack == NULL)
+		error_2(1.1, lnum);
+	printf("%d\n", (*stack)->n);
+}
+/**
+ *print_stack - pointer to the stack
+ *stack: pointer to the stack
+ *@lnum: line number
+ */
+void print_stack(stack_t **stack, unsigned int lnum)
+{
+	stack_t *tmp;
+	unsigned int lnum;
+	if (stack == NULL)
+		exit(EXIT_FAILURE);
+	tmp = *stack;
+	while (tmp != NULL)
+	{
+		printf("%d\n", tmp->n);
+		tmp = tmp->next;
+	}
+}

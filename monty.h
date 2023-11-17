@@ -47,6 +47,10 @@ void wchFunc(char *opcode, char *value, int lnum, int format);
 void freeNodes(void);
 stack_t *create_node(int n);
 void funccall(op_func func, char *op, char *val, int lnum, int format);
+void print_stack(stack_t **stack, unsigned int lnum);
+void print_top(stack_t **stack, unsigned int lnum);
+void add_to_stack(stack_t **newnode, _attribute_((unused)), unsigned int lnum);
+void add_nodes(stack_t **stack, unsigned int lnum);
 
 
 #endif
