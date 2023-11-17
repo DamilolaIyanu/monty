@@ -35,5 +35,18 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+extern stack_t *head;
+typedef void (*op_func)(stack_t **, unsigned int);
+
+int main(int ac, char *av[]);
+void error_1(int error_code, ...);
+int tokenize(char *buf, int lnum, int format);
+void readFile(FILE *fd);
+void openFile(char *fileName);
+void wchFunc(char *opcode, char *value, int lnum, int format);
+void freeNodes(void);
+stack_t *create_node(int n);
+void funccall(op_func func, char *op, char *val, int lnum, int format);
+
 
 #endif
