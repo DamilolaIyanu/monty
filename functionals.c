@@ -7,7 +7,9 @@
 stack_t *create_node(int n)
 {
 	stack_t *node;
+
 	node = malloc(sizeof(stack_t));
+
 	if (node == NULL)
 		error_1(3);
 	node->next = NULL;
@@ -19,9 +21,10 @@ stack_t *create_node(int n)
 /**
  *freeNode - frees nodes
  */
-void freeNodes(void)
+void freeNode(void)
 {
 	stack_t *tmp;
+
 	if (head == NULL)
 		return;
 	while (head != NULL)
@@ -34,8 +37,9 @@ void freeNodes(void)
 /**
  *funccall - calls the function
  *@func: the function
+ *@op: operator
  *@val: pointer to the value
- *@lnum: the line number 
+ *@lnum: the line number
  *@format: either stack or queue
  */
 void funccall(op_func func, char *op, char *val, int lnum, int format)
@@ -62,7 +66,7 @@ void funccall(op_func func, char *op, char *val, int lnum, int format)
 			if (isdigit(val[i]) == 0)
 				error_1(4, lnum);
 		}
-		node = create_node(atoi(val) *flag);
+		node = create_node(atoi(val) * flag);
 
 		if (format == 1)
 			add_to_queue(&node, lnum);
@@ -70,5 +74,5 @@ void funccall(op_func func, char *op, char *val, int lnum, int format)
 			func(&node, lnum);
 	}
 	else
-		func(&head,lnum);
+		func(&head, lnum);
 }

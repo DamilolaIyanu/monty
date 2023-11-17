@@ -24,6 +24,6 @@ int tokenize(char *buf, int lnum, int format)
 	if (strcmp(opcode, "queue") == 0)
 		return (-1);
 
-	findFunc(opcode, value, lnum, format);
+	wchFunc(opcode, value, lnum, format);
 	return (format);
 }
